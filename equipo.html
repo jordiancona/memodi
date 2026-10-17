@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo Médico & Dirección – Memodi Inc</title>
+    <meta name="description" content="Conoce al Dr. Oliverio Ambriz y al equipo multidisciplinario de médicos y desarrolladores detrás de Memodi.">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#3B82F6',
+                            indigo: '#6366F1',
+                            dark: '#0F172A',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .glass-panel-team {
+            background: rgba(15, 23, 42, 0.78);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col font-sans transition-colors duration-200">
+
+    <!-- ========================================== -->
+    <!-- HEADER & NAVBAR                            -->
+    <!-- ========================================== -->
+    <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-gray-200/80 dark:border-slate-800/80 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                
+                <!-- Logo & Brand -->
+                <a href="index.html" class="flex items-center space-x-3 group" aria-label="Memodi Inicio">
+                    <img src="assets/images/icono-memodi.png" alt="Memodi Logo" class="w-10 h-10 rounded-xl shadow-sm group-hover:scale-105 transition-transform">
+                    <div class="flex flex-col">
+                        <span class="font-bold text-xl tracking-tight text-gray-900 dark:text-white leading-none">Memodi</span>
+                        <span class="text-[10px] uppercase font-semibold text-blue-600 dark:text-blue-400 tracking-wider">Medical Suite</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2" aria-label="Navegación principal">
+                    <a href="index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">Características</a>
+                    <a href="temas.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">Temas</a>
+                    <a href="redes.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">Redes</a>
+                    <a href="apps.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">Apps</a>
+                    <a href="equipo.html" class="px-3 py-2 rounded-lg text-sm font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 transition-colors" aria-current="page">Equipo</a>
+                    <a href="https://enarm.memodiapp.com/" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors flex items-center gap-1">
+                        <span>ENARM</span>
+                        <span class="material-icons text-xs text-gray-400">open_in_new</span>
+                    </a>
+                </nav>
+
+                <!-- Actions: Theme Toggle & Web App CTA -->
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <button id="theme-toggle-btn" type="button" aria-label="Cambiar tema" class="p-2.5 rounded-xl text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9h-1m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+
+                    <a href="https://web.memodiapp.com/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-md shadow-blue-500/20 transition-all hover:scale-[1.02]">
+                        <span>Abrir Web App</span>
+                        <span class="material-icons text-sm">arrow_forward</span>
+                    </a>
+
+                    <button id="mobile-menu-open-btn" type="button" class="md:hidden p-2.5 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Abrir menú">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
+    <div id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 w-72 max-w-[85vw] bg-white dark:bg-slate-900 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col p-6">
+        <div class="flex items-center justify-between pb-6 border-b border-gray-200 dark:border-slate-800">
+            <div class="flex items-center space-x-2">
+                <img src="assets/images/icono-memodi.png" alt="Memodi" class="w-8 h-8 rounded-lg">
+                <span class="font-bold text-lg text-gray-900 dark:text-white">Memodi</span>
+            </div>
+            <button id="mobile-menu-close-btn" class="p-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-slate-800" aria-label="Cerrar menú">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-2 py-6 overflow-y-auto">
+            <a href="index.html" class="px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800">Características</a>
+            <a href="temas.html" class="px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800">Temas</a>
+            <a href="redes.html" class="px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800">Redes</a>
+            <a href="apps.html" class="px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800">Apps</a>
+            <a href="equipo.html" class="px-4 py-2.5 rounded-lg text-base font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30">Equipo</a>
+            <a href="https://enarm.memodiapp.com/" target="_blank" class="px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800">ENARM</a>
+            <a href="https://accio.memodiapp.com" target="_blank" class="px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800">Accio</a>
+            <a href="https://calculus.memodiapp.com" target="_blank" class="px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800">Calculus</a>
+        </div>
+        <div class="mt-auto pt-6 border-t border-gray-200 dark:border-slate-800">
+            <a href="https://web.memodiapp.com/" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-md">
+                <span>Abrir Web App</span>
+                <span class="material-icons text-sm">arrow_forward</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MAIN CONTENT - EQUIPO MEMODI               -->
+    <!-- ========================================== -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16 flex-grow w-full space-y-16">
+
+        <!-- Hero Title -->
+        <div class="text-center max-w-3xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-950/50 border border-indigo-200/80 dark:border-indigo-800/80 text-indigo-700 dark:text-indigo-300 text-xs sm:text-sm font-semibold mb-6 shadow-sm">
+                <span class="material-icons text-sm text-indigo-500">groups</span>
+                <span>Comité Médico & Consejo Editorial</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4 leading-tight">
+                El motor detrás de <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Memodi</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto">
+                Un equipo multidisciplinario uniendo medicina clínica, tecnología y diseño pedagógico para transformar el aprendizaje médico continuo.
+            </p>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- FOUNDER SPOTLIGHT CARD (DR. OLIVERIO)      -->
+        <!-- ========================================== -->
+        <div class="w-full cursor-pointer group" onclick="toggleModal('modal-oliverio')">
+            <div class="relative w-full h-[540px] md:h-[640px] rounded-[2.5rem] overflow-hidden shadow-2xl bg-slate-900 border border-slate-800 transition-all duration-500 hover:shadow-indigo-500/10">
+                
+                <!-- Background Image with object-position pinned to face -->
+                <img src="assets/images/team/dr_oliverio.jpg" 
+                     alt="Dr. Oliverio Ambriz - Fundador de Memodi" 
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out opacity-85 group-hover:opacity-100 group-hover:scale-[1.03]"
+                     style="object-position: 50% 15% !important;">
+
+                <!-- Subtle Lighting Gradient Overlays -->
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-90"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-transparent to-transparent"></div>
+
+                <!-- Floating "+ Leer Historia" Button -->
+                <div class="absolute top-6 right-6 z-20">
+                    <button class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-lg group-hover:bg-indigo-600 group-hover:border-indigo-500 transition-all duration-300">
+                        <span class="text-xs font-bold tracking-wide">Historia Completa</span>
+                        <span class="material-icons text-base">arrow_forward</span>
+                    </button>
+                </div>
+
+                <!-- Information Panel -->
+                <div class="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:w-[540px] z-20">
+                    <div class="glass-panel-team p-6 sm:p-8 rounded-3xl text-white shadow-2xl border border-white/15">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-indigo-500/30 text-indigo-300 text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-md border border-indigo-400/30">
+                                Fundador & Director Médico
+                            </span>
+                        </div>
+
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">Dr. Oliverio Ambriz</h3>
+                        
+                        <p class="text-indigo-300 text-xs font-semibold uppercase tracking-wider mt-1 mb-3">
+                            Medicina Interna · Creador de Contenido & Diseño de Interfaz
+                        </p>
+
+                        <p class="text-slate-200 text-sm sm:text-base leading-relaxed mb-5">
+                            Médico especialista con visión tecnológica. Su objetivo es transformar la saturación de información médica en conocimiento clínico duradero mediante repetición espaciada.
+                        </p>
+
+                        <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                            <span class="text-xs text-indigo-300 font-semibold group-hover:underline flex items-center gap-1">
+                                <span>Ver trayectoria y visión</span>
+                                <span class="material-icons text-xs">open_in_new</span>
+                            </span>
+
+                            <!-- Social Links -->
+                            <div class="flex items-center space-x-2" onclick="event.stopPropagation()">
+                                <a href="https://www.instagram.com/droliverio" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white hover:text-pink-600 text-white flex items-center justify-center transition border border-white/10" aria-label="Instagram Dr. Oliverio">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                </a>
+                                <a href="https://www.x.com/luisoliverio" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white hover:text-black text-white flex items-center justify-center transition border border-white/10" aria-label="X Dr. Oliverio">
+                                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                                </a>
+                                <a href="https://www.droliverioambriz.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white hover:text-blue-600 text-white flex items-center justify-center transition border border-white/10" aria-label="Sitio Web Dr. Oliverio">
+                                    <span class="material-icons text-sm">language</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- CLINICAL DIRECTORS GRID                    -->
+        <!-- ========================================== -->
+        <div class="space-y-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Dirección Médica & Contenido</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Especialistas comprometidos con el rigor científico y la didáctica médica</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                
+                <!-- Dra. Alejandra Galván -->
+                <div class="group relative h-[480px] rounded-3xl overflow-hidden shadow-xl bg-slate-800 border border-gray-200/80 dark:border-slate-800">
+                    <img src="assets/images/team/dra_alejandra.jpeg" alt="Dra. Alejandra Galván" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out opacity-90 group-hover:opacity-100 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                    
+                    <div class="absolute bottom-5 left-5 right-5 z-10">
+                        <div class="glass-panel-team p-5 rounded-2xl text-white">
+                            <span class="text-[10px] font-bold text-indigo-300 uppercase tracking-wider block mb-1">Universidad de Guanajuato</span>
+                            <h3 class="text-xl font-bold">Dra. Alejandra Galván</h3>
+                            <p class="text-indigo-400 text-xs font-semibold uppercase mb-2">Directora de Contenido Médico</p>
+                            <p class="text-slate-300 text-xs mb-4 line-clamp-3 leading-relaxed">
+                                Apasionada del aprendizaje continuo, la redacción científica y la síntesis pedagógica para la comprensión de temas clínicos de alta complejidad.
+                            </p>
+                            <div class="flex items-center justify-between pt-3 border-t border-white/10 text-xs">
+                                <span class="text-slate-400">Contacto Editorial</span>
+                                <a href="mailto:alegalvanmart@gmail.com" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-indigo-600 text-white flex items-center justify-center transition-colors" title="Enviar correo">
+                                    <span class="material-icons text-sm">email</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dra. Lucía González -->
+                <div class="group relative h-[480px] rounded-3xl overflow-hidden shadow-xl bg-slate-800 border border-gray-200/80 dark:border-slate-800">
+                    <img src="assets/images/team/dra_lucia.jpeg" alt="Dra. Lucía González" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out opacity-90 group-hover:opacity-100 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                    
+                    <div class="absolute bottom-5 left-5 right-5 z-10">
+                        <div class="glass-panel-team p-5 rounded-2xl text-white">
+                            <span class="text-[10px] font-bold text-indigo-300 uppercase tracking-wider block mb-1">Universidad de Guanajuato</span>
+                            <h3 class="text-xl font-bold">Dra. Lucía González</h3>
+                            <p class="text-indigo-400 text-xs font-semibold uppercase mb-2">Directora de Marketing & Simulador ENARM</p>
+                            <p class="text-slate-300 text-xs mb-4 line-clamp-3 leading-relaxed">
+                                Especializada en la comunicación didáctica, creativa y visual, y en el análisis estratégico del examen nacional para optimizar el rendimiento de los aspirantes.
+                            </p>
+                            <div class="flex items-center justify-between pt-3 border-t border-white/10 text-xs">
+                                <span class="text-slate-400">Contacto Simulador</span>
+                                <a href="mailto:lucigopa0112@gmail.com" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-indigo-600 text-white flex items-center justify-center transition-colors" title="Enviar correo">
+                                    <span class="material-icons text-sm">email</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Gerardo Aguiñaga -->
+                <div class="group relative h-[480px] rounded-3xl overflow-hidden shadow-xl bg-slate-800 border border-gray-200/80 dark:border-slate-800">
+                    <img src="assets/images/team/dr_gerardo.jpeg" alt="Dr. Gerardo Aguiñaga" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out opacity-90 group-hover:opacity-100 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                    
+                    <div class="absolute bottom-5 left-5 right-5 z-10">
+                        <div class="glass-panel-team p-5 rounded-2xl text-white">
+                            <span class="text-[10px] font-bold text-indigo-300 uppercase tracking-wider block mb-1">Patólogo Clínico</span>
+                            <h3 class="text-xl font-bold">Dr. Gerardo Aguiñaga</h3>
+                            <p class="text-indigo-400 text-xs font-semibold uppercase mb-2">Director de Producto & Soporte</p>
+                            <p class="text-slate-300 text-xs mb-4 line-clamp-3 leading-relaxed">
+                                Experto en docencia, laboratorio clínico y usabilidad. Responsable de garantizar que la experiencia técnica y académica de cada médico en Memodi sea impecable.
+                            </p>
+                            <div class="flex items-center justify-between pt-3 border-t border-white/10 text-xs">
+                                <span class="text-slate-400">@labnotes_drgerardo</span>
+                                <a href="https://www.instagram.com/labnotes_drgerardo?igsh=YWd5NTlkOG92NTJ1&utm_source=qr" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-pink-600 text-white flex items-center justify-center transition-colors" title="Instagram">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PILLARS & EDITORIAL RIGOR                  -->
+        <!-- ========================================== -->
+        <section class="bg-white dark:bg-slate-800/80 rounded-3xl p-8 sm:p-12 border border-gray-200/80 dark:border-slate-700/80 shadow-xl">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 px-3 py-1 rounded-full">Metodología de Calidad</span>
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white mt-3">Estándares Editoriales de Memodi</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                        <span class="material-icons text-2xl">verified_user</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-gray-900 dark:text-white">Basado en GPC y Evidencia</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Cada concepto es verificado contra las Guías de Práctica Clínica mexicanas y literatura internacional de alto impacto (UpToDate, NEJM, Lancet).
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center">
+                        <span class="material-icons text-2xl">psychology</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-gray-900 dark:text-white">Repetición Espaciada Adaptativa</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Algoritmos fundamentados en la curva del olvido que programan repasos antes de que el conocimiento se desvanezca de la memoria operativa.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                        <span class="material-icons text-2xl">sync</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-gray-900 dark:text-white">Actualización Continua</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Cuando un fármaco, dosis o criterio diagnóstico cambia, la base de datos se actualiza en la nube de forma transparente e inmediata para todos los usuarios.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- MODAL HISTORIA DEL FUNDADOR                -->
+    <!-- ========================================== -->
+    <div id="modal-oliverio" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6" role="dialog" aria-modal="true">
+        <div class="relative bg-slate-900 border border-slate-700 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl">
+            
+            <!-- Close Button -->
+            <button onclick="toggleModal('modal-oliverio')" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-white transition-colors z-20 bg-slate-800/80 rounded-full backdrop-blur-sm" aria-label="Cerrar modal">
+                <span class="material-icons">close</span>
+            </button>
+
+            <!-- Header with Banner Image -->
+            <div class="relative h-56 sm:h-64 overflow-hidden">
+                <img src="assets/images/team/dr_oliverio.jpg" class="w-full h-full object-cover opacity-60" style="object-position: 50% 15% !important;">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6 sm:p-8 w-full">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-1">Dr. Oliverio Ambriz</h2>
+                    <p class="text-indigo-400 font-semibold uppercase tracking-wider text-xs sm:text-sm">
+                        Fundador, Creador de Contenido, Diseño de Interfaz & Director del Equipo
+                    </p>
+                </div>
+            </div>
+
+            <!-- Body Text -->
+            <div class="p-6 sm:p-8 pt-2 space-y-6 text-slate-300 leading-relaxed text-sm sm:text-base">
+                
+                <!-- Credentials List -->
+                <div class="bg-slate-800/60 rounded-2xl p-5 border border-slate-700/60">
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-200">
+                        <li class="flex items-start gap-3">
+                            <span class="material-icons text-indigo-400 text-sm mt-0.5">school</span>
+                            <span>Titulación por excelencia académica en Medicina por la <strong>Universidad de Guanajuato</strong>, México.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-icons text-indigo-400 text-sm mt-0.5">local_hospital</span>
+                            <span>Especialista en Medicina Interna por el <strong>Hospital Regional de Alta Especialidad del Bajío (HRAEB)</strong> y la <strong>UNAM</strong>.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-icons text-indigo-400 text-sm mt-0.5">medical_services</span>
+                            <span>Médico Internista en <strong>Hospital Aranda de la Parra</strong>.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-icons text-indigo-400 text-sm mt-0.5">code</span>
+                            <span>Desarrollador y diseñador de la suite Memodi, Accio, Calculus y Simulador ENARM.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <p>
+                    Durante mi internado médico y mi residencia de Medicina Interna me percaté del poco tiempo disponible para estudiar con calma durante las guardias hospitalarias, aun cuando la exigencia por mantenerse actualizado con el mayor nivel clínico y académico es continua y decisiva.
+                </p>
+                
+                <p>
+                    Comprobé que aunque leyeras un tratado completo o tuvieras una clase magistral, la curva del olvido natural hacía que gran parte de esa información se perdiera a las pocas semanas si no existía un sistema estructurado de evocación activa.
+                </p>
+
+                <blockquote class="border-l-4 border-indigo-500 pl-4 py-1 italic text-white bg-indigo-950/20 rounded-r-xl">
+                    "En Medicina se necesita información de alto nivel, en español, sintetizada, y que te permita no olvidarla jamás. Seguíamos estudiando como en 1990: sentados simplemente leyendo y olvidándolo después. Decidí que debíamos usar la tecnología y los algoritmos a nuestro favor."
+                </blockquote>
+
+                <p>
+                    De esa necesidad nació Memodi: concebido por un médico en formación para transformar la vida académica de otros médicos y estudiantes.
+                </p>
+
+                <div class="pt-4 border-t border-slate-800 flex justify-end">
+                    <button onclick="toggleModal('modal-oliverio')" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-sm font-bold transition">
+                        Cerrar Historia
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- FOOTER                                     -->
+    <!-- ========================================== -->
+    <footer class="bg-white dark:bg-slate-950 border-t border-gray-200 dark:border-slate-800 transition-colors mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-gray-100 dark:border-slate-800">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/images/icono-memodi.png" alt="Memodi" class="w-8 h-8 rounded-lg">
+                    <div>
+                        <span class="font-bold text-gray-900 dark:text-white text-base">Memodi Inc</span>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Tecnología médica para el estudio y práctica clínica</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-600 dark:text-gray-400">
+                    <a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Características</a>
+                    <a href="temas.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Temas</a>
+                    <a href="redes.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Redes</a>
+                    <a href="apps.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Apps</a>
+                    <a href="equipo.html" class="text-blue-600 dark:text-blue-400 font-semibold">Equipo</a>
+                    <a href="https://memodiapp.com/Privacidad.html" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Privacidad</a>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 dark:text-gray-400 gap-4">
+                <p>© 2026 Memodi Inc. Todos los derechos reservados. Desarrollado por médicos para médicos.</p>
+                <div class="flex items-center space-x-4">
+                    <a href="redes.html" class="hover:text-blue-500 transition">Soporte 24/7</a>
+                    <span>•</span>
+                    <a href="https://web.memodiapp.com" target="_blank" class="hover:text-blue-500 transition">Versión Web</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script type="module" src="js/main.js"></script>
+    <script>
+        function toggleModal(modalID) {
+            const modal = document.getElementById(modalID);
+            if (!modal) return;
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('modal-oliverio');
+                if (modal && !modal.classList.contains('hidden')) {
+                    toggleModal('modal-oliverio');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

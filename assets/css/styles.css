@@ -1,0 +1,137 @@
+/* Custom Styles & Gradient Presets for Memodi Características */
+
+:root {
+  --color-primary: #3B82F6;
+  --color-bg-light: #F9FAFB;
+  --color-bg-dark: #111827;
+}
+
+/* Custom Gradients */
+.gradient-orange {
+  background: linear-gradient(135deg, #FF6B4A 0%, #FF8E3C 50%, #FFA827 100%);
+}
+
+.gradient-blue {
+  background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+}
+
+.gradient-purple {
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 50%, #9333EA 100%);
+}
+
+.gradient-teal {
+  background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+}
+
+.gradient-dark {
+  background: linear-gradient(135deg, #111827 0%, #1F2937 100%);
+}
+
+.gradient-cyan {
+  background: linear-gradient(135deg, #06B6D4 0%, #22D3EE 100%);
+}
+
+.gradient-instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+/* Glassmorphism card buttons */
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Card hover animation */
+.feature-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Social Card Hover Effects */
+.social-card {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-card:hover {
+  transform: translateY(-4px);
+}
+
+.brand-glow-whatsapp:hover {
+  border-color: rgba(37, 211, 102, 0.5);
+  box-shadow: 0 16px 32px -8px rgba(37, 211, 102, 0.22);
+}
+
+.brand-glow-telegram:hover {
+  border-color: rgba(0, 136, 204, 0.5);
+  box-shadow: 0 16px 32px -8px rgba(0, 136, 204, 0.22);
+}
+
+.brand-glow-email:hover {
+  border-color: rgba(234, 67, 53, 0.5);
+  box-shadow: 0 16px 32px -8px rgba(234, 67, 53, 0.22);
+}
+
+.brand-glow-instagram:hover {
+  border-color: rgba(225, 48, 108, 0.5);
+  box-shadow: 0 16px 32px -8px rgba(225, 48, 108, 0.25);
+}
+
+.brand-glow-tiktok:hover {
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 16px 32px -8px rgba(6, 182, 212, 0.22);
+}
+
+.brand-glow-x:hover {
+  border-color: rgba(156, 163, 175, 0.5);
+  box-shadow: 0 16px 32px -8px rgba(156, 163, 175, 0.2);
+}
+
+.brand-glow-facebook:hover {
+  border-color: rgba(24, 119, 242, 0.5);
+  box-shadow: 0 16px 32px -8px rgba(24, 119, 242, 0.22);
+}
+
+/* Live Pulse Animation */
+@keyframes pingSlow {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+.animate-ping-slow {
+  animation: pingSlow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Toast Notification Animation */
+#copy-toast {
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 114, 128, 0.8);
+}

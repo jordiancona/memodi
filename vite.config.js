@@ -1,15 +1,18 @@
 import { resolve } from 'path';
+import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
+
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(import.meta.dirname, 'index.html'),
-        redes: resolve(import.meta.dirname, 'redes.html'),
-        temas: resolve(import.meta.dirname, 'temas.html'),
-        apps: resolve(import.meta.dirname, 'apps.html'),
-        equipo: resolve(import.meta.dirname, 'equipo.html'),
+        main: resolve(__dirname, 'index.html'),
+        redes: resolve(__dirname, 'redes.html'),
+        temas: resolve(__dirname, 'temas.html'),
+        apps: resolve(__dirname, 'apps.html'),
+        equipo: resolve(__dirname, 'equipo.html'),
       },
     },
   },
